@@ -18,7 +18,7 @@ function Board() {
   const [resetTrigger, setResetTrigger] = useState(0)
   const [gameIsOver, setGameIsOver] = useState(false)
   const [boardSize, setBoardSize] = useState(18)
-  const [winCon, setWinCon] = useState(4)
+  const [winCon, setWinCon] = useState(5)
   // const [lastClicked, setLastClicked] = useState({x: null, y: null})
 
   //do once on mount/startup and on reset
@@ -223,16 +223,17 @@ function Board() {
   const changeSettings = (event) => {
     event.preventDefault()
 
-    setBoardSize(event.target.elements.inputFieldSize.value)
-    setWinCon(event.target.elements.inputFieldWinCon.value)
+    setBoardSize(Number(event.target.elements.inputFieldSize.value))
+    setWinCon(Number(event.target.elements.inputFieldWinCon.value))
     setResetTrigger(prev => prev + 1)
   }
 
   return (
     <main>
-      <h1 className="title">this is the board<br /></h1>
-      {gameIsOver ? <p>{isXTurn ? "O" : "X"} won! Congrats!</p> : <p>Next Turn: {isXTurn ? "X" : "O"}</p>}
-      {boardSize < winCon ? <div><h1>invalid board size</h1><h1>board size must be bigger than win condition</h1></div>:
+      <h1 className="title">Connect X<br /></h1>
+      <p>Get {winCon} in a row to win</p>
+      {gameIsOver ? <p className="winnerText">{isXTurn ? "O" : "X"} won! Congrats!</p> : <p>Next Turn: {isXTurn ? "X" : "O"}</p>}
+      {boardSize < winCon ? <div><h1>invalid board size</h1><h1>board size must be bigger than win condition</h1></div> :
         <section className="gameboard">
           {board.map((row, yIndex) => (
             <div key={yIndex}>
@@ -247,7 +248,7 @@ function Board() {
           ))}
         </section>
       }
-
+      <p>current board size: {boardSize}. current win condition: {winCon}</p>
       {/* <form onSubmit={changeBoardSize}><p>Board size:</p><input defaultValue={boardSize} type="number" name="inputFieldSize"></input><button type="submit">confirm</button></form>
         <form onSubmit={changeWinCon}><p>Win Condition:</p><input defaultValue={winCon} type="number" name="inputFieldWin"></input><button type="submit">confirm</button></form> */}
 

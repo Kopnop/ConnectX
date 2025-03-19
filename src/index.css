@@ -19,6 +19,9 @@ main {
   color: #f59a02
 }
 
+main p {
+  padding: 5px;
+}
 /* .title{
   display: flex;
   justify-content: center;
@@ -44,6 +47,10 @@ button {
   margin: 1px;
 }
 
+.winnerText {
+  font-size: 2rem;
+  font-weight: bolder;
+}
 
 
 input {
