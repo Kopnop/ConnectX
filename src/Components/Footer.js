@@ -6,7 +6,7 @@ export default function Footer() {
         <footer>
             <div className='footer--div'>
             <p>made by Kopnop</p>
-            <span><a href="https://github.com/Kopnop/FCC-Drum-Machine" target="_blank" rel="noreferrer"><p>view source code</p>
+            <span><a href="https://www.google.com/" target="_blank" rel="noreferrer"><p>view source code</p>
             <FontAwesomeIcon className="git--icon" icon={faGithub} /></a></span>
             </div>
         </footer>

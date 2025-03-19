@@ -9,38 +9,54 @@ body {
 }
 
 main {
-  /* display: flex; */
-
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 96vh;
   width: 100vw;
-  background: linear-gradient(135deg, rgb(0, 0, 0) 0%, rgb(44, 44, 44) 45%, rgb(44, 44, 44) 55%, rgb(0, 0, 0) 100%);
-  color:#f59a02
+  background: linear-gradient(135deg, rgb(15, 15, 15) 0%, rgb(44, 44, 44) 45%, rgb(44, 44, 44) 55%, rgb(15, 15, 15) 100%);
+  color: #f59a02
 }
 
-.title{
+/* .title{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.gameboard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+} */
 
 button {
   background-color: black;
-  color:#f59a02;
+  color: #f59a02;
+  border: 1px rgb(78, 22, 22) solid;
   padding: 10px;
   margin: 10px;
-  /* size: 20; */
-  width: 100px;
-  border: 1px rgb(78, 22, 22) solid;
 }
 
+.gameboard {
+  padding: 15px 0px 0px;
+}
+
+.gameboard button {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin: 1px;
+}
+
+
+
+input {
+  width: 50px;
+  margin: 0 5px;
+  background-color: #f59a02;
+  font-weight: bold;
+  text-align: center;
+}
+
+label {
+  margin: 0px 10px
+}
 
 footer {
   height: 4vh;
@@ -59,7 +75,7 @@ footer p {
 
 .git--icon {
   display: inline;
-  margin-left:3px;
+  margin-left: 3px;
 }
 
 a {
@@ -90,15 +106,10 @@ input[type="checkbox"]:checked {
 } */
 
 @media (max-width: 600px) {
-  #drum-machine {
-    flex-direction: column;
-    width: 90%;
-    height: 600px;
-  }
 
-  * {
+  /* * {
     font-size: 1.2rem;
-  }
+  } */
 
   .display {
     width: 100%
